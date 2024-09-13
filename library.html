@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="library.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+  <title>Library</title>
+</head>
+<body>
+  <div class="container">
+    <div class="right-menu right" id="rightMenu">
+      <div class="icon">
+        <i class="fa-solid fa-house"></i>
+        <div class="icon-text"><a href="/">home</a></div>
+      </div>
+      <div class="icon">
+        <i class="fa-solid fa-book"></i>
+        <div class="icon-text"><a href="library.html">library</a></div>
+      </div>
+      <div class="icon">
+        <i class="fa-solid fa-address-book"></i>
+        <div class="icon-text"><a href="apply.html">Enroll</a></div>
+      </div>
+      <div class="icon">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        <div class="icon-text"><a href="portal.html">portal</a></div>
+      </div>
+      <div class="icon">
+        <i class="fa-solid fa-globe"></i>
+        <div class="icon-text"><a href="community.html">community</a></div>
+      </div>
+    </div>
+    <!-- right end -->
+    <!-- start main -->
+    <div class="main-content">
+      <header>
+        <div class="navbar">
+          <div class="logo">
+            <img src="logo2.png" alt="">
+          </div>
+          <div class="navigation-menu">
+            <nav>
+              <li><a href="apply.html">register</a></li>
+              <li><a href="login.html">login</a></li>
+            </nav>
+          </div>
+          <div class="social-icons">
+            <a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
+          </div>
+          <div class="hambuger-menu">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </header>
+
+      <div class="libary-container">
+        <article>
+          <h1>Library</h1>
+          <form id="search-form">
+            <input type="text" id="query" placeholder="Search for books by title or author" required>
+            <button type="submit">Search</button>
+          </form>
+        </article>
+        
+        <main>
+          <div class="results" id="results">
+            <!-- Book results will be displayed here -->
+          </div>
+        </main>
+      </div>
+
+      <footer>
+        <div class="footer-content">
+          <div class="logo-icons">
+            <img src="logo2.png" alt="" width="150px">
+            <div class="logo-fa">
+              <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.twitter.com" target="_blank" class="social-icon"><i class="fa-brands fa-square-x-twitter"></i></a>
+              <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.youtube.com" target="_blank" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://www.linkedin.com" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-about">
+            <ul>
+              <li><a href="">mission & vision</a></li>
+              <li><a href="">school objectives</a></li>
+              <li><a href="">strategic intention</a></li>
+              <li><a href="">principal officers</a></li>
+            </ul>
+          </div>
+          <div class="footer-staff">
+            <ul>
+              <li><a href="">apply to GSI</a></li>
+              <li><a href="">staff login</a></li>
+              <li><a href="">CERAD</a></li>
+              <li><a href="">download</a></li>
+            </ul>
+          </div>
+          <div class="footer-network">
+            <ul>
+              <li><a href="">school library</a></li>
+              <li><a href="">school consultancy</a></li>
+              <li><a href="">school registry</a></li>
+              <li><a href="">training manual</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="school-name">
+            Global Star International Group of School.
+        </div>
+        <div class="school-location">
+          351w, Global Star International Group of School, ut ....
+          <span class="telephone-icon"><i class="fa-solid fa-phone"></i></span><span class="telephone">+234-813-8581-834</span>
+        </div>
+       </footer>  
+    <div>
+  <div>
+
+<script>
+  document.getElementById('search-form').addEventListener('submit', async (event) => {
+    event.preventDefault();
+  
+    const query = document.getElementById('query').value;
+    const resultsContainer = document.getElementById('results');
+  
+    try {
+      const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}`);
+      
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+  
+      const data = await response.json();
+      resultsContainer.innerHTML = ''; // Clear previous results
+  
+      if (data.items) {
+        data.items.forEach(item => {
+          const book = item.volumeInfo;
+          const bookElement = document.createElement('div');
+          bookElement.classList.add('book');
+          bookElement.innerHTML = `
+            <a href="${item.volumeInfo.infoLink}" target="_blank">
+              <h2>${book.title}</h2>
+              <h3>${book.authors ? book.authors.join(', ') : 'Unknown Author'}</h3>
+              <p><strong>Publisher:</strong> ${book.publisher ? book.publisher : 'Unknown Publisher'}</p>
+              <p class="description">${book.description ? book.description : 'No Description Available'}</p>
+              <img src="${book.imageLinks ? book.imageLinks.thumbnail : 'https://via.placeholder.com/150'}" alt="${book.title}">
+            </a>
+          `;
+          resultsContainer.appendChild(bookElement);
+        });
+      } else {
+        resultsContainer.innerHTML = '<p>No results found.</p>';
+      }
+    } catch (error) {
+      resultsContainer.innerHTML = '<p>An error occurred while fetching data.</p>';
+      console.error(error);
+    }
+  });
+  
+</script>
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="library-container">
+    <article>
+      <h1>Library</h1>
+      <form id="search-form">
+        <input type="text" id="query" placeholder="Search for books by title or author" required>
+        <button type="submit">Search</button>
+      </form>
+    </article>
+    
+    <main>
+      <div class="results" id="results">
+      </div>
+    </main>
+  </div> -->
+
+  

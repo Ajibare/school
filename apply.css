@@ -1,0 +1,75 @@
+
+:root{
+  --primary-col: #017a31;
+  --secondary-col:#0b9324;
+  --primary-col-expanded: #63d272;
+  --light-shadow: #f1e2ad;
+  }
+  body{
+    background-color: var(--light-shadow);
+  }
+  form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: var(--light-shadow);
+}
+
+h2 {
+  text-align: center;
+  color: var(--primary-col);
+}
+
+fieldset {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+legend {
+  color: var(--primary-col-expanded);
+  padding: 0 10px;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="file"] {
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary-col);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--primary-col-expanded);
+}

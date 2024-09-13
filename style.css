@@ -1,0 +1,554 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", "Playfair Display", system-ui, sans-serif;
+}
+
+:root{
+--primary-col: #017a31;
+--secondary-col:#f38d3a;
+--primary-col-expanded: #63d272;
+--light-shadow: #f8fffbd3;
+}
+
+body{
+  overflow-x: hidden;
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  max-height: 60vh;
+  background:var(--light-shadow);
+}
+
+.container{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* menu right */
+.right-menu{
+  background:var(--primary-col-expanded);
+  text-align: center;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+.fa-solid{
+  color: white;
+  font-size: 35px;
+  padding: 2rem 4rem;
+}
+
+.fa-solid:hover{
+  color: var(--secondary-col);
+  font-size:40px;
+  transition: ease-in-out .5s;
+}
+
+.icon{
+  border:1px solid var(--primary-col) ;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+}
+
+.icon-text a{
+  font-size:20px ;
+  text-transform: capitalize;
+  padding-bottom: 1rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+}
+
+/* main start */
+
+.main-content{
+position: relative;
+margin-left: 135px;
+width: 100%;
+}
+
+/* header */
+
+header{
+  margin-bottom: 1rem;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+  padding: 0 2rem ;
+  height: 70px;
+  background-color:var(--primary-col-expanded);
+}
+
+.logo img{
+  width: 85px;
+  text-align: center;
+}
+
+.logo{
+  text-align: center;
+}
+
+.navigation-menu nav{
+  display: flex;
+}
+
+.navigation-menu nav li{
+  list-style: none;
+  padding: 2rem;
+}
+.navigation-menu nav a{
+  text-decoration: none;
+  font-size: 16px;
+  text-transform: capitalize;
+  padding: 2rem;
+  color: white;
+}
+
+.social-icons{
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  font-size: 20px;
+}
+.fa-brands{
+  padding-left:1rem ;
+
+}
+
+.social-icons a {
+  color: white;
+  margin-right: 15px;
+  font-size: 24px;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--secondary-col);
+  transform: scale(1.2);
+}
+
+.social-icons a:hover {
+  transform: scale(1.2) translateY(-5px);
+  transition: transform 0.3s ease-out, color 0.3s ease-out;
+}
+
+.hambuger-menu{
+  display: none;
+}
+
+.header-content{
+  background-image: url(header-bg.jpg);
+  background-size: cover !important;
+  height: 100vh;
+  text-align: center;
+}
+
+.header-content h2{
+  color:#fcf4f4;
+  text-align: center;
+  font-size: 65px;
+  font-weight:900;
+  padding: 11rem;
+  line-height: 1.3;
+}
+
+/* school detail */
+
+.school-details{
+  display: flex;
+  justify-content: space-around;
+}
+
+.school-card{
+  text-align: center;
+  background-color: white;
+  padding: 4rem;
+  transform: translateY(-30%);
+  background: white;
+  border-radius: 10px;
+}
+
+.school-card h3{
+  padding-top: 1rem;
+  font-size: 20px;
+}
+.school-card p{
+  padding-top: 1rem;
+  color: gray;
+}
+
+ /* about */
+ .about{
+  margin-bottom: 2rem;
+ }
+
+ .about-welcome-address{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-around;
+  grid-column-gap: 4rem;
+  grid-row-gap: 4rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+ }
+
+ .about-principal,
+ .about-video{
+  text-align: center;
+  line-height: 1.5;
+ }
+
+ /* .about-video{
+  border: 1px solid red;
+  
+ }
+
+ .about-video video{
+  border: 4px solid red;
+ } */
+
+ .principal-image img{
+  border-left:5px solid var(--secondary-col);
+  border-top:5px solid var(--primary-col);
+  border-right:5px solid var(--primary-col);
+  border-bottom-left-radius: 10rem;
+ }
+
+/* welcome content */
+.welcome-section{
+  background-image: black;
+  padding:4rem 5rem;
+  margin: 0 auto;
+  align-items: center;
+  background-color: var(--light-shadow);
+}
+
+.wel{
+  font-size: 22px;
+  text-align: center;
+  padding-bottom: 6rem;
+}
+
+.underline{
+  margin: 0 auto;
+  text-align: center;
+  width: 80px;
+  height: 3px;
+  background-color:var(--primary-col);
+  border-radius: 5px;
+}
+
+.convincing-section{
+  padding:7rem 5rem ;
+  background-color:var(--primary-col);
+  border-bottom-right-radius: 70px;
+  border-top-left-radius: 70px;
+  color: var(--light-shadow);
+  display:grid;
+  justify-content: space-between;
+  grid-template-columns: 1fr 1fr;  
+}
+
+video{
+  width: 400px;
+}
+
+.convincing-title h2{
+  font-size: 20px;
+  padding-bottom: 2rem;
+}
+.convincing-words{
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+/* officers */
+
+.officer{
+  padding-bottom: 6rem;
+}
+
+.school-officers{
+  padding: 4rem;
+  display: flex;
+  justify-content: space-evenly;
+  grid-column-gap: 4rem;
+}
+
+
+.registry-office{
+  transform: translateY(15%);
+}
+.bursar-office{
+  transform: translateY(30%);
+}
+
+.principal-office h3,
+.registry-office h3,
+.bursar-office h3{
+  text-transform: capitalize;
+  color: gray !important;;
+  font-weight: lighter;
+}
+
+.principal-office,
+.registry-office,
+.bursar-office{  
+  background-color: var(--light-shadow);
+  line-height: 1.5;
+  border-radius: 5px;
+  height: 55vh;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid gray;
+  box-shadow: 4px 4px 4px gray;
+}
+/* 
+.principal-office p,
+.registry-office p,
+.bursar-office p{  
+ font-size: 14px;
+} */
+
+.principal-office img,
+.registry-office img,
+.bursar-office img{
+  width: 120px;
+  aspect-ratio: 1/1;
+  border: 1px solid var(--primary-col);
+  border-radius: 50%;
+  box-shadow: 4px 4px 4px var(--primary-col);
+}
+
+.principal-office:hover,
+.registry-office:hover,
+.bursar-office:hover{
+  padding-bottom:1px ;
+  transition: ease-in-out .5s;
+}
+
+
+/* footer */
+
+footer{
+  margin-top:2rem ;
+  padding:2rem 0 ;
+  background:var(--primary-col-expanded);
+}
+
+.footer-content{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  padding-bottom: 2rem;
+}
+
+.logo-icons{
+  display: block;
+  text-align: center;
+}
+.logo-fa{
+  font-size: 25px;
+  color: white;
+  display: flex;
+}
+
+.social-icon {
+  color: var(--primary-col); 
+  font-size: 24px;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--secondary-col); 
+  transform: scale(1.2); 
+}
+
+.social-icon:hover {
+  color: var(--secondary-col);
+  transform: scale(1.2) translateY(-5px); 
+  transition: transform 0.3s ease-out, color 0.3s ease-out;
+}
+
+
+.footer-content a{
+  color: white !important;
+  text-transform: capitalize;
+  text-decoration: none;
+  padding: 0.5rem;
+  font-size: 18px;
+}
+
+.footer-content a:hover{
+font-size: 16px;
+}
+
+.footer-content li{
+  padding: 1rem;
+  list-style: none;
+}
+.school-name,
+.school-location{
+  text-align: center;
+  font-size: 20px;
+  font-weight:600;
+  color:white;
+}
+.school-name{
+  background: var(--primary-col);
+  padding: 2rem 0; 
+}
+.school-location{
+  padding: 2rem 0; 
+  text-transform: uppercase;
+}
+.telephone{
+  text-decoration: underline;
+}
+.fa-phone{
+  font-size: 15px;
+  padding-left:.5rem ;
+  padding: 0;
+}
+.fa-phone:hover{
+  color: #1da1f2;
+  font-size:20px;
+  transition: ease-in-out .5s;
+}
+
+/* media query */
+
+@media (max-width:850px) {
+
+  body{
+    font-size: 14px;
+  }
+  .right-menu{
+    display: block;
+    width: 100%;
+    height: 100%; 
+  }
+  .right{
+    display: none;
+  }
+
+  .main-content{
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .social-icons{
+    display:none;
+  }
+
+  .hambuger-menu{
+    display: block;
+    color: red;
+  }
+
+  .header-content{
+    background-image: url(header-bg.jpg);
+    background-size: cover !important;
+    height: 50vh;
+    width: 100%;
+    text-align: center;
+  }
+
+  .header-content h2{
+    color:#fcf4f4;
+    font-size: 2.5rem;
+    font-weight:900;
+    padding: 5rem;
+  }
+
+  .school-details{
+    display: block;
+  }
+
+  .about-welcome-address{
+    display: block;
+  }
+
+  .about-principal{
+    margin-bottom: 2rem;
+  }
+
+  .about-video video{
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .welcome-section{
+    padding: 0;
+  }
+
+  .wel{
+    margin-top: 1rem;
+  }
+
+  .convincing-section{
+    padding: 2rem 3rem;
+    grid-template-columns: 1fr;
+    order: 2;
+    flex-direction: column-reverse;
+    width: 100%;
+    border-radius: none;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  .convincing-gif video{
+    margin: 0 auto;
+    width: 95%;
+  }
+
+  .school-officers{
+    padding: 4rem;
+    display: block;
+    /* justify-content: space-evenly;
+    grid-column-gap: 4rem; */
+  }
+
+  .footer-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 14px;
+    justify-content: space-around;
+    flex-direction: row;
+    padding: 2rem;
+  }
+
+  .right-menu {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  /* Show the menu when active */
+  .right-menu.active {
+    display: block;
+    opacity: 1;
+  }
+  
+  /* Optionally, style the active state of the hamburger menu */
+  .hambuger-menu.active i {
+    color: var(--secondary-col); /* Change icon color on active */
+    transform: rotate(90deg); /* Rotate icon on active */
+    transition: transform 0.3s ease;
+  }
+}
+
+
+

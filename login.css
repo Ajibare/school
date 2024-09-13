@@ -1,0 +1,122 @@
+
+:root{
+  --primary-col: #017a31;
+  --secondary-col:#f38d3a;
+  --primary-col-expanded: #63d272;
+  --light-shadow: #f8fffbd3;
+}
+   
+  /* student login */
+#login-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid var(--primary-col-expanded);
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px var(--light-shadow);
+}
+
+#login-form h2 {
+  text-align: center;
+  color: var(--primary-col);
+}
+
+#login-form .form-group {
+  margin-bottom: 15px;
+}
+
+#login-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--primary-col);
+}
+
+#login-form input[type="email"],
+#login-form input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid var(--primary-col-expanded);
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px var(--light-shadow);
+}
+
+#login-form button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary-col);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#login-form button[type="submit"]:hover {
+  background-color: var(--primary-col-expanded);
+}
+
+
+/* staff login */
+#staff-login-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid var(--primary-col-expanded);
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px var(--light-shadow);
+}
+
+#staff-login-form h2 {
+  text-align: center;
+  color: var(--primary-col);
+}
+
+#staff-login-form .form-group {
+  margin-bottom: 15px;
+}
+
+#staff-login-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--primary-col);
+}
+
+#staff-login-form input[type="text"],
+#staff-login-form input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid var(--primary-col-expanded);
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px var(--light-shadow);
+}
+
+#staff-login-form button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary-col);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#staff-login-form button[type="submit"]:hover {
+  background-color: var(--primary-col-expanded);
+}
+
+
+.login{
+  color: var(--primary-col-expanded);
+  margin: 3rem;
+  text-align: center;
+  text-transform: capitalize;
+}
